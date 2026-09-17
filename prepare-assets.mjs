@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 
 const ORIGIN = 'https://ne-vyhodi-brodsky.koukurme.chatgpt.site/';
 const downloadPaths = [
@@ -136,7 +137,18 @@ async function rebuildPayload(prefix, target) {
   console.log(`Prepared ${target} (${bytes.length} bytes)`);
 }
 
+function rebuildGzipPayload(prefix, target) {
+  const dir = 'code-payloads';
+  const parts = fs.readdirSync(dir).filter(name => name.startsWith(prefix + '.')).sort();
+  if (!parts.length) throw new Error(`Missing code payload: ${prefix}`);
+  const encoded = parts.map(name => fs.readFileSync(path.join(dir, name), 'ascii')).join('');
+  const compressed = Buffer.from(encoded, 'base64');
+  const bytes = zlib.gunzipSync(compressed);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, bytes);
+  console.log(`Prepared ${target} (${bytes.length} bytes)`);
+}
+
 await Promise.all(downloadPaths.map(ensureDownload));
-await rebuildPayload('gameplay-atlas.avif.b64', 'public/resources/art-v1900/gameplay-atlas.avif');
-await rebuildPayload('shoot-crouch-down.avif.b64', 'public/resources/art-v1800/player/shoot-crouch-down.avif');
+rebuildGzipPayload('game.js.gz.b64', 'public/resources/game.js');
 console.log('All runtime assets prepared.');
