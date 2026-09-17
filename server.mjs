@@ -22,4 +22,4 @@ http.createServer((req, res) => {
   const ext = path.extname(file).toLowerCase();
   res.writeHead(200, {'content-type': types[ext] || 'application/octet-stream', 'cache-control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'});
   fs.createReadStream(file).pipe(res);
-}).listen(port, '0.0.0.0', () => console.log(`NE VYHODI V20.1 listening on ${port}`));
+}).listen(port, '0.0.0.0', () => console.log(`NE VYHODI V20.3 listening on ${port}`));

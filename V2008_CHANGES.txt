@@ -1,0 +1,6 @@
+НЕ ВЫХОДИ — V20.3 / v2008 physics pass
+
+- arch jump trajectory corrected so running no longer overshoots the snow cap
+- arch landing assist now guides velocity gradually toward the cap instead of accelerating away
+- arch foreground occlusion now follows NPCs as well as the player, removing pop/flicker at arches
+- full v2007 high-quality graphics retained unchanged
