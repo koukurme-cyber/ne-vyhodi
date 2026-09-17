@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>НЕ ВЫХОДИ — полная сборка</title>
+</head>
+<body>
+  <div id="stage"><canvas id="c" width="1280" height="720"></canvas></div>
+  <div class="help"><b>НЕ ВЫХОДИ</b><br>A/D или ←/→ — идти · Shift — бежать · Space — прыжок<br>W/S или ↑/↓ — лестница/прицел · Enter/клик — действие/огонь · R — заново<br><span id="objective">выйти из комнаты</span></div>
+  <div class="status" id="state">Загрузка графики…</div>
+  <div class="rotate">Поверните телефон горизонтально</div>
+  <div class="mobile">
+    <div class="stick" id="stick"><div class="knob"></div></div>
+    <button class="mbtn hidebtn" id="hideBtn" aria-label="Спрятаться или выйти">УКРЫТИЕ</button>
+    <button class="mbtn action" id="actionBtn" aria-label="Действие">ДЕЙСТВИЕ</button>
+    <button class="mbtn jump" id="jumpBtn" aria-label="Прыжок">ПРЫЖОК</button>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <script src="/src/boot.js"></script>
+</body>
+</html>
