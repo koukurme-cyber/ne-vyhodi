@@ -1,0 +1,15 @@
+НЕ ВЫХОДИ — Railway V20.1 / v2006
+
+1. Распакуйте этот ZIP на компьютере.
+2. Откройте GitHub-репозиторий koukurme-cyber/ne-vyhodi, ветка main.
+3. Add file → Upload files.
+4. Перетащите СОДЕРЖИМОЕ распакованной папки в корень репозитория, сохранив папки:
+   - code-payloads-v2006/
+   - runtime-payloads-v2006/
+   - public/
+   и файлы package.json, prepare-assets.mjs, server.mjs.
+5. GitHub должен показать замену существующих package.json, prepare-assets.mjs, server.mjs и public/index.html, плюс новые payload-папки.
+6. Commit directly to the main branch.
+
+Не загружайте сам ZIP в репозиторий вместо его содержимого.
+Старые папки code-payloads можно не удалять: новая сборка их не использует.

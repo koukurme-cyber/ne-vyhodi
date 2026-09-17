@@ -1,42 +1,45 @@
-const ASSET_ZIP_URL = 'https://ne-vyhodi-v40-jtlf89.v2.appdeploy.ai/resources/ne-vyhodi-v40-assets.zip';
+import fs from 'node:fs';
+import path from 'node:path';
+import zlib from 'node:zlib';
 
-function listZipEntries(buffer) {
-  const eocdSignature = 0x06054b50;
-  const centralSignature = 0x02014b50;
-  const min = Math.max(0, buffer.length - 0xffff - 22);
-  let eocd = -1;
-  for (let i = buffer.length - 22; i >= min; i -= 1) {
-    if (buffer.readUInt32LE(i) === eocdSignature) {
-      eocd = i;
-      break;
-    }
-  }
-  if (eocd < 0) throw new Error('ZIP EOCD not found');
-
-  const totalEntries = buffer.readUInt16LE(eocd + 10);
-  let offset = buffer.readUInt32LE(eocd + 16);
-  const entries = [];
-  for (let i = 0; i < totalEntries; i += 1) {
-    if (buffer.readUInt32LE(offset) !== centralSignature) throw new Error(`Bad central directory entry at ${offset}`);
-    const method = buffer.readUInt16LE(offset + 10);
-    const compressedSize = buffer.readUInt32LE(offset + 20);
-    const uncompressedSize = buffer.readUInt32LE(offset + 24);
-    const nameLength = buffer.readUInt16LE(offset + 28);
-    const extraLength = buffer.readUInt16LE(offset + 30);
-    const commentLength = buffer.readUInt16LE(offset + 32);
-    const name = buffer.subarray(offset + 46, offset + 46 + nameLength).toString('utf8');
-    entries.push({ name, method, compressedSize, uncompressedSize });
-    offset += 46 + nameLength + extraLength + commentLength;
-  }
-  return entries;
+function readParts(dir, prefix) {
+  const parts = fs.readdirSync(dir).filter(name => name.startsWith(prefix)).sort();
+  if (!parts.length) throw new Error(`Missing payload: ${dir}/${prefix}`);
+  return parts.map(name => fs.readFileSync(path.join(dir, name), 'ascii')).join('');
 }
 
-const response = await fetch(ASSET_ZIP_URL, { redirect: 'follow' });
-console.log(`Asset bridge: HTTP ${response.status} ${response.url}`);
-if (!response.ok) throw new Error(`Asset bridge failed: HTTP ${response.status}`);
-const bytes = Buffer.from(await response.arrayBuffer());
-console.log(`Asset bridge downloaded: ${bytes.length} bytes`);
-const entries = listZipEntries(bytes);
-console.log(`ZIP entries: ${entries.length}`);
-for (const entry of entries) console.log(`ZIP ${entry.uncompressedSize}\t${entry.name}`);
-console.log('Diagnostic only: existing public files left unchanged.');
+function extractTar(buffer, root = 'public') {
+  let offset = 0;
+  while (offset + 512 <= buffer.length) {
+    const header = buffer.subarray(offset, offset + 512);
+    if (header.every(byte => byte === 0)) break;
+    const str = (a, b) => header.subarray(a, b).toString('utf8').replace(/\0.*$/, '');
+    const name = str(0, 100);
+    const prefix = str(345, 500);
+    const rel = prefix ? `${prefix}/${name}` : name;
+    const sizeText = str(124, 136).trim();
+    const size = sizeText ? parseInt(sizeText, 8) : 0;
+    const type = String.fromCharCode(header[156] || 48);
+    const safe = path.normalize(rel).replace(/^([/\\])+/, '');
+    const target = path.join(root, safe);
+    if (!path.resolve(target).startsWith(path.resolve(root))) throw new Error(`Unsafe tar path: ${rel}`);
+    offset += 512;
+    if (type === '5') fs.mkdirSync(target, { recursive: true });
+    else if (type === '0' || type === '\0') {
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.writeFileSync(target, buffer.subarray(offset, offset + size));
+    }
+    offset += Math.ceil(size / 512) * 512;
+  }
+}
+
+const runtimeEncoded = readParts('runtime-payloads-v2006', 'runtime-assets.tgz.b64.');
+const runtimeTar = zlib.gunzipSync(Buffer.from(runtimeEncoded, 'base64'));
+extractTar(runtimeTar, 'public');
+console.log(`Prepared self-contained V20.1 runtime (${runtimeTar.length} tar bytes).`);
+
+const gameEncoded = readParts('code-payloads-v2006', 'game.js.gz.b64.');
+const gameBytes = zlib.gunzipSync(Buffer.from(gameEncoded, 'base64'));
+fs.mkdirSync('public/resources', { recursive: true });
+fs.writeFileSync('public/resources/game.js', gameBytes);
+console.log(`Prepared V20.1 game.js (${gameBytes.length} bytes).`);

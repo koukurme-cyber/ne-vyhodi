@@ -3,7 +3,5 @@
   "version": "20.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "start": "node prepare-assets.mjs && node server.mjs"
-  }
+  "scripts": { "start": "node prepare-assets.mjs && node server.mjs" }
 }

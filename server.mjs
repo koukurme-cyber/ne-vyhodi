@@ -3,25 +3,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'public');
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), 'public');
 const port = Number(process.env.PORT || 3000);
-const mime = new Map([
-  ['.html','text/html; charset=utf-8'], ['.js','text/javascript; charset=utf-8'], ['.css','text/css; charset=utf-8'],
-  ['.txt','text/plain; charset=utf-8'], ['.json','application/json; charset=utf-8'], ['.png','image/png'],
-  ['.jpg','image/jpeg'], ['.jpeg','image/jpeg'], ['.webp','image/webp'], ['.avif','image/avif']
-]);
-
-http.createServer((req,res)=>{
-  const u = new URL(req.url || '/', 'http://localhost');
-  if (u.pathname === '/health') { res.writeHead(200, {'content-type':'text/plain'}); res.end('ok'); return; }
-  let rel = decodeURIComponent(u.pathname).replace(/^\/+/, '') || 'index.html';
-  const file = path.resolve(root, rel);
-  if (!file.startsWith(root + path.sep) && file !== path.join(root,'index.html')) { res.writeHead(403); res.end('forbidden'); return; }
-  fs.stat(file,(err,stat)=>{
-    if (err || !stat.isFile()) { res.writeHead(404, {'content-type':'text/plain'}); res.end('not found'); return; }
-    const ext=path.extname(file).toLowerCase();
-    const headers={'content-type': mime.get(ext)||'application/octet-stream'};
-    if (!['.html','.js','.txt'].includes(ext)) headers['cache-control']='public, max-age=31536000, immutable';
-    res.writeHead(200,headers); fs.createReadStream(file).pipe(res);
-  });
-}).listen(port,'0.0.0.0',()=>console.log(`NE VYHODI listening on ${port}`));
+const types = {
+  '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8',
+  '.css':'text/css; charset=utf-8', '.json':'application/json; charset=utf-8',
+  '.webp':'image/webp', '.avif':'image/avif', '.png':'image/png',
+  '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.svg':'image/svg+xml'
+};
+http.createServer((req, res) => {
+  if (req.url === '/health') { res.writeHead(200, {'content-type':'text/plain; charset=utf-8'}); res.end('ok'); return; }
+  const pathname = new URL(req.url || '/', 'http://localhost').pathname;
+  const requested = pathname === '/' ? '/index.html' : pathname;
+  const file = path.normalize(path.join(root, requested));
+  if (!file.startsWith(root) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
+    res.writeHead(404, {'content-type':'text/plain; charset=utf-8'}); res.end('Not found'); return;
+  }
+  const ext = path.extname(file).toLowerCase();
+  res.writeHead(200, {'content-type': types[ext] || 'application/octet-stream', 'cache-control': ext === '.html' ? 'no-cache' : 'public, max-age=31536000, immutable'});
+  fs.createReadStream(file).pipe(res);
+}).listen(port, '0.0.0.0', () => console.log(`NE VYHODI V20.1 listening on ${port}`));
