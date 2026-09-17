@@ -1,0 +1,9 @@
+НЕ ВЫХОДИ — V20.2 / v2007 quality pass
+
+- full-resolution base atlas from canonical source assets (4096x2698 vs 1020x599 in v2006)
+- canonical high-quality campaign backgrounds restored
+- canonical gameplay atlas restored
+- postal clerk alpha channel restored
+- high-quality image smoothing
+- canvas backing resolution adapts up to 2x for large/HiDPI displays
+- no network asset bridge, no startup payload unpacking
