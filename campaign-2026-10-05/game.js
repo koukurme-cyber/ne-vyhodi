@@ -15,6 +15,8 @@ const images = {},
   W = 1280,
   H = 720,
   G = 600;
+const pendingPresses = new Set();
+const instantKeys = new Set(['action', 'jump', 'attack']);
 let camera = 0,
   ready = false,
   started = false,
@@ -319,6 +321,7 @@ function overlay(title, body, buttons) {
 }
 
 function resume() {
+  pendingPresses.clear();
   engine.paused = false;
   $('overlay').hidden = true;
   for (const k in keys) keys[k] = false;
@@ -406,6 +409,7 @@ addEventListener('keydown', e => {
     if (engine.paused) return;
     e.preventDefault();
     keys[map[e.code]] = true;
+    if (!e.repeat && instantKeys.has(map[e.code])) pendingPresses.add(map[e.code]);
   }
 });
 addEventListener('keyup', e => {
@@ -415,6 +419,7 @@ addEventListener('keyup', e => {
   }
 });
 addEventListener('blur', () => {
+  pendingPresses.clear();
   for (const k in keys) keys[k] = false;
   if (started && !engine.paused) pause();
 });
@@ -423,6 +428,7 @@ for (const b of document.querySelectorAll('[data-key]')) {
     e.preventDefault();
     b.setPointerCapture(e.pointerId);
     keys[b.dataset.key] = true;
+    if (!engine.paused && instantKeys.has(b.dataset.key)) pendingPresses.add(b.dataset.key);
   });
   for (const event of ['pointerup', 'pointercancel', 'lostpointercapture']) b.addEventListener(event, () =>
     keys[b.dataset.key] = false);
@@ -431,6 +437,12 @@ for (const b of document.querySelectorAll('[data-key]')) {
 function tick(t) {
   const dt = Math.min(.05, Math.max(0, (t - last) / 1000));
   last = t;
+  // Preserve short presses even if keyup arrives before the next animation frame.
+  engine.input = { ...keys };
+  for (const key of pendingPresses) engine.input[key] = true;
+  if (pendingPresses.has('action')) engine.actionLatch = false;
+  if (pendingPresses.has('jump')) engine.jumpLatch = false;
+  pendingPresses.clear();
   engine.update(dt);
   if (toastT > 0) {
     toastT -= dt;

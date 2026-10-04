@@ -1,0 +1,850 @@
+{
+  "reports": [
+    {
+      "chapter": 1,
+      "id": "room",
+      "done": true,
+      "seconds": 5.6,
+      "deaths": 0,
+      "x": 1663,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 2,
+      "id": "communal",
+      "done": true,
+      "seconds": 100,
+      "deaths": 0,
+      "x": 10662,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 3,
+      "id": "yard",
+      "done": true,
+      "seconds": 157.2,
+      "deaths": 0,
+      "x": 16661,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 4,
+      "id": "bus",
+      "done": true,
+      "seconds": 31.6,
+      "deaths": 0,
+      "x": 6262,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 5,
+      "id": "rurik",
+      "done": true,
+      "seconds": 132.4,
+      "deaths": 0,
+      "x": 14060,
+      "step": 1,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 6,
+      "id": "fish",
+      "done": true,
+      "seconds": 18.3,
+      "deaths": 0,
+      "x": 2263,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 7,
+      "id": "sleepwalker",
+      "done": true,
+      "seconds": 151.4,
+      "deaths": 0,
+      "x": 16061,
+      "step": 1,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 8,
+      "id": "post",
+      "done": true,
+      "seconds": 13.9,
+      "deaths": 0,
+      "x": 2462,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 9,
+      "id": "garden",
+      "done": true,
+      "seconds": 136.2,
+      "deaths": 0,
+      "x": 14461,
+      "step": 4,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 10,
+      "id": "tram",
+      "done": true,
+      "seconds": 39.9,
+      "deaths": 0,
+      "x": 8060,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 11,
+      "id": "vo",
+      "done": true,
+      "seconds": 35,
+      "deaths": 0,
+      "x": 7661,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 12,
+      "id": "facade",
+      "done": true,
+      "seconds": 145.7,
+      "deaths": 0,
+      "x": 15460,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 13,
+      "id": "housing",
+      "done": true,
+      "seconds": 141.8,
+      "deaths": 0,
+      "x": 21664,
+      "step": 2,
+      "arena": 18,
+      "kills": 57,
+      "hp": 3
+    },
+    {
+      "chapter": 14,
+      "id": "cage",
+      "done": true,
+      "seconds": 27.1,
+      "deaths": 0,
+      "x": 6062,
+      "step": 4,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 15,
+      "id": "luggage",
+      "done": true,
+      "seconds": 159.7,
+      "deaths": 0,
+      "x": 23661,
+      "step": 2,
+      "arena": 20,
+      "kills": 66,
+      "hp": 4
+    },
+    {
+      "chapter": 16,
+      "id": "pawnshop",
+      "done": true,
+      "seconds": 32.1,
+      "deaths": 0,
+      "x": 7061,
+      "step": 3,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 17,
+      "id": "atelier",
+      "done": true,
+      "seconds": 42.9,
+      "deaths": 0,
+      "x": 9262,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 18,
+      "id": "bread",
+      "done": true,
+      "seconds": 54.2,
+      "deaths": 0,
+      "x": 7661,
+      "step": 4,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 19,
+      "id": "night",
+      "done": true,
+      "seconds": 160.1,
+      "deaths": 0,
+      "x": 23662,
+      "step": 2,
+      "arena": 20,
+      "kills": 66,
+      "hp": 4
+    },
+    {
+      "chapter": 20,
+      "id": "boiler",
+      "done": true,
+      "seconds": 34.5,
+      "deaths": 0,
+      "x": 6260,
+      "step": 2,
+      "arena": 1,
+      "kills": 9,
+      "hp": 5
+    },
+    {
+      "chapter": 21,
+      "id": "flood",
+      "done": true,
+      "seconds": 86.6,
+      "deaths": 0,
+      "x": 16063,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 1
+    },
+    {
+      "chapter": 22,
+      "id": "chase",
+      "done": true,
+      "seconds": 201,
+      "deaths": 0,
+      "x": 21262,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 23,
+      "id": "shop",
+      "done": true,
+      "seconds": 25.2,
+      "deaths": 0,
+      "x": 5663,
+      "step": 1,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    },
+    {
+      "chapter": 24,
+      "id": "return",
+      "done": true,
+      "seconds": 5.6,
+      "deaths": 0,
+      "x": 1663,
+      "step": 2,
+      "arena": 0,
+      "kills": 0,
+      "hp": 5
+    }
+  ],
+  "events": [
+    {
+      "chapter": "room",
+      "time": 0.8000000000000008,
+      "message": "Книга — с собой."
+    },
+    {
+      "chapter": "room",
+      "time": 4.499999999999989,
+      "message": "Не выходи из комнаты. Но газета сама не придёт."
+    },
+    {
+      "chapter": "communal",
+      "time": 23.433333333333284,
+      "message": "В очереди один человек. Он стоит за вами."
+    },
+    {
+      "chapter": "communal",
+      "time": 52.4999999999983,
+      "message": "— Ну как оно?\n— Нормально."
+    },
+    {
+      "chapter": "communal",
+      "time": 90.51666666666281,
+      "message": "Первый этаж. Лифт поехал вниз."
+    },
+    {
+      "chapter": "yard",
+      "time": 145.55000000000797,
+      "message": "На скамейке безопасно."
+    },
+    {
+      "chapter": "yard",
+      "time": 229.9833333334085,
+      "message": "«Не вызывай мотора»."
+    },
+    {
+      "chapter": "bus",
+      "time": 265.9500000000868,
+      "message": "Это электробус"
+    },
+    {
+      "chapter": "rurik",
+      "time": 346.15000000001385,
+      "message": "— Спрашивай.\n— Что спросить с тебя, Рюрик?"
+    },
+    {
+      "chapter": "fish",
+      "time": 428.2499999999392,
+      "message": "Рыба взята."
+    },
+    {
+      "chapter": "fish",
+      "time": 432.4999999999353,
+      "message": "Икра взята. Рыбу нужно вернуть."
+    },
+    {
+      "chapter": "fish",
+      "time": 437.43333333326416,
+      "message": "Зачем нам рыба, раз есть икра."
+    },
+    {
+      "chapter": "sleepwalker",
+      "time": 517.8166666665244,
+      "message": "Он идёт во сне. Не будите."
+    },
+    {
+      "chapter": "post",
+      "time": 597.0666666664523,
+      "message": "Постуму. Одному Постуму."
+    },
+    {
+      "chapter": "post",
+      "time": 599.283333333117,
+      "message": "Книги перевязаны."
+    },
+    {
+      "chapter": "post",
+      "time": 607.0333333331099,
+      "message": "— Откуда? — Ниоткуда.\n— Дата? — Надцатое мартобря.\n— Вручную пробьём."
+    },
+    {
+      "chapter": "garden",
+      "time": 626.4833333330922,
+      "message": "Три рекламные звезды закрывают небо."
+    },
+    {
+      "chapter": "garden",
+      "time": 732.8166666663288,
+      "message": "Наконец-то звёзды."
+    },
+    {
+      "chapter": "tram",
+      "time": 750.5833333329794,
+      "message": "Трамвай есть. Рельсов нет."
+    },
+    {
+      "chapter": "tram",
+      "time": 768.4666666662964,
+      "message": "Джон Донн спит."
+    },
+    {
+      "chapter": "vo",
+      "time": 792.5666666662745,
+      "message": "— Цель визита?\n— Умирать.\n— Вы первично или повторно?"
+    },
+    {
+      "chapter": "vo",
+      "time": 812.5999999995896,
+      "message": "В справке: «По месту требования»."
+    },
+    {
+      "chapter": "facade",
+      "time": 849.7999999995558,
+      "message": "Не тот дом."
+    },
+    {
+      "chapter": "facade",
+      "time": 902.2333333328414,
+      "message": "Тоже не тот."
+    },
+    {
+      "chapter": "facade",
+      "time": 948.116666666133,
+      "message": "— Он был синий?\n— По документам — синий."
+    },
+    {
+      "chapter": "housing",
+      "time": 968.5499999994478,
+      "message": "— Это всё?\n— Пени ещё растут."
+    },
+    {
+      "chapter": "housing",
+      "time": 971.3666666661119,
+      "message": "Проход открыт · 1/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 976.8833333327735,
+      "message": "Проход открыт · 2/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 985.6499999994322,
+      "message": "Проход открыт · 3/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 990.4333333327612,
+      "message": "Проход открыт · 4/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 996.8833333327553,
+      "message": "Проход открыт · 5/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1006.8333333327463,
+      "message": "Проход открыт · 6/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1013.4666666660736,
+      "message": "Проход открыт · 7/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1020.2333333327341,
+      "message": "Проход открыт · 8/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1029.8666666660588,
+      "message": "Проход открыт · 9/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1035.6333333327202,
+      "message": "Проход открыт · 10/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1043.683333332713,
+      "message": "Проход открыт · 11/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1052.3999999993716,
+      "message": "Проход открыт · 12/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1058.4166666660328,
+      "message": "Проход открыт · 13/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1065.633333332693,
+      "message": "Проход открыт · 14/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1075.2499999993508,
+      "message": "Проход открыт · 15/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1083.033333332677,
+      "message": "Проход открыт · 16/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1089.8166666660043,
+      "message": "Проход открыт · 17/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1102.3999999993262,
+      "message": "Проход открыт · 18/18"
+    },
+    {
+      "chapter": "housing",
+      "time": 1102.4166666659928,
+      "message": "Итого к оплате: ничего."
+    },
+    {
+      "chapter": "cage",
+      "time": 1111.1333333326515,
+      "message": "— Пост сдал.\n— Кружку забыл."
+    },
+    {
+      "chapter": "cage",
+      "time": 1131.5999999992996,
+      "message": "Зверь оставил записку: «На обеде»."
+    },
+    {
+      "chapter": "luggage",
+      "time": 1137.0999999992946,
+      "message": "Внутри не только книги."
+    },
+    {
+      "chapter": "luggage",
+      "time": 1140.2999999992917,
+      "message": "Проход открыт · 1/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1145.7499999992867,
+      "message": "Проход открыт · 2/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1154.4333333326122,
+      "message": "Проход открыт · 3/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1159.1499999992745,
+      "message": "Проход открыт · 4/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1165.5166666659354,
+      "message": "Проход открыт · 5/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1174.9333333325935,
+      "message": "Проход открыт · 6/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1180.8666666659215,
+      "message": "Проход открыт · 7/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1187.9999999992483,
+      "message": "Проход открыт · 8/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1197.0833333325734,
+      "message": "Проход открыт · 9/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1203.8833333325672,
+      "message": "Проход открыт · 10/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1210.583333332561,
+      "message": "Проход открыт · 11/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1219.6666666658862,
+      "message": "Проход открыт · 12/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1226.4499999992133,
+      "message": "Проход открыт · 13/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1233.9833333325398,
+      "message": "Проход открыт · 14/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1244.3166666658637,
+      "message": "Проход открыт · 15/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1249.4333333325258,
+      "message": "Проход открыт · 16/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1261.8166666658478,
+      "message": "Проход открыт · 17/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1270.6833333325064,
+      "message": "Проход открыт · 18/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1276.5666666658344,
+      "message": "Проход открыт · 19/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1288.9666666658231,
+      "message": "Проход открыт · 20/20"
+    },
+    {
+      "chapter": "luggage",
+      "time": 1289.8999999991556,
+      "message": "Лишний багаж рассеялся."
+    },
+    {
+      "chapter": "pawnshop",
+      "time": 1299.449999999147,
+      "message": "Оружие принято. Квитанцию сохраните."
+    },
+    {
+      "chapter": "pawnshop",
+      "time": 1320.3666666657946,
+      "message": "Сосед танцует. Проход свободен."
+    },
+    {
+      "chapter": "atelier",
+      "time": 1334.9166666657813,
+      "message": "— Что шьёте?\n— Биографию рыжему."
+    },
+    {
+      "chapter": "atelier",
+      "time": 1357.0499999990946,
+      "message": "— Какую биографию нашему рыжему шьют?\n— Парадную."
+    },
+    {
+      "chapter": "bread",
+      "time": 1375.533333332411,
+      "message": "Хлеб без корки."
+    },
+    {
+      "chapter": "bread",
+      "time": 1395.0666666657266,
+      "message": "Корку отдельно положили."
+    },
+    {
+      "chapter": "bread",
+      "time": 1419.4333333323711,
+      "message": "Адресат: «Мне». Письмо помещается только в карман."
+    },
+    {
+      "chapter": "night",
+      "time": 1425.9999999990318,
+      "message": "— Что это за тоска?\n— Необъяснимая."
+    },
+    {
+      "chapter": "night",
+      "time": 1429.199999999029,
+      "message": "Проход открыт · 1/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1434.649999999024,
+      "message": "Проход открыт · 2/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1443.3333333323494,
+      "message": "Проход открыт · 3/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1448.0499999990118,
+      "message": "Проход открыт · 4/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1454.4166666656727,
+      "message": "Проход открыт · 5/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1463.8333333323308,
+      "message": "Проход открыт · 6/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1469.7666666656587,
+      "message": "Проход открыт · 7/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1476.8999999989855,
+      "message": "Проход открыт · 8/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1485.9833333323106,
+      "message": "Проход открыт · 9/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1492.7833333323044,
+      "message": "Проход открыт · 10/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1499.4833333322983,
+      "message": "Проход открыт · 11/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1508.5666666656234,
+      "message": "Проход открыт · 12/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1515.3499999989506,
+      "message": "Проход открыт · 13/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1522.883333332277,
+      "message": "Проход открыт · 14/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1533.216666665601,
+      "message": "Проход открыт · 15/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1538.333333332263,
+      "message": "Проход открыт · 16/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1550.716666665585,
+      "message": "Проход открыт · 17/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1559.5833333322437,
+      "message": "Проход открыт · 18/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1565.4666666655717,
+      "message": "Проход открыт · 19/20"
+    },
+    {
+      "chapter": "night",
+      "time": 1577.8666666655604,
+      "message": "Проход открыт · 20/20"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1592.8666666655467,
+      "message": "Тень отступает · 1/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1593.283333332213,
+      "message": "Тень отступает · 2/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1593.6999999988793,
+      "message": "Тень отступает · 3/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1594.1166666655456,
+      "message": "Тень отступает · 4/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1596.0499999988772,
+      "message": "Тень отступает · 5/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1596.4666666655435,
+      "message": "Тень отступает · 6/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1596.8833333322098,
+      "message": "Тень отступает · 7/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1597.299999998876,
+      "message": "Тень отступает · 8/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1599.2499999988743,
+      "message": "Тень отступает · 9/9"
+    },
+    {
+      "chapter": "boiler",
+      "time": 1615.566666665526,
+      "message": "Теперь слышно собственные шаги."
+    },
+    {
+      "chapter": "flood",
+      "time": 1633.2999999988433,
+      "message": "Венеция. Только маленькая."
+    },
+    {
+      "chapter": "flood",
+      "time": 1694.7499999987874,
+      "message": "Октябрь. Листья — тоже новости."
+    },
+    {
+      "chapter": "shop",
+      "time": 1920.7166666652486,
+      "message": "— Вчерашнюю или сегодняшнюю?\n— Вечернюю."
+    },
+    {
+      "chapter": "return",
+      "time": 1936.0833333319013,
+      "message": "НИЧЕГО НЕ ПРОИЗОШЛО"
+    }
+  ],
+  "totalSeconds": 1937.8833333318996
+}

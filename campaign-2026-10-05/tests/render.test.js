@@ -37,8 +37,10 @@ test('Frontend loads every sprite and renders all 24 chapters without runtime er
     createTextNode: make
   };
   globalThis.window = {};
-  globalThis.addEventListener = () => {};
-  globalThis.requestAnimationFrame = () => 0;
+  const handlers = {};
+  let nextFrame;
+  globalThis.addEventListener = (name, fn) => { handlers[name] = fn; };
+  globalThis.requestAnimationFrame = fn => { nextFrame = fn; return 0; };
   globalThis.localStorage = {
     getItem: () => null,
     setItem() {}
@@ -60,6 +62,17 @@ test('Frontend loads every sprite and renders all 24 chapters without runtime er
     render
   } = await import('../game.js');
   await new Promise(resolve => setImmediate(resolve));
+  // A complete keydown/keyup between frames must still trigger one action.
+  engine.enter(0);
+  engine.paused = false;
+  engine.state.x = 450;
+  const event = { code: 'Enter', repeat: false, preventDefault() {} };
+  handlers.keydown(event);
+  handlers.keyup(event);
+  nextFrame(performance.now() + 17);
+  assert.equal(engine.state.step, 1);
+  nextFrame(performance.now() + 34);
+  assert.equal(engine.state.step, 1);
   assert.ok(loaded.length > 35);
   assert.equal(document.getElementById('start').disabled, false);
   for (let i = 0; i < chapters.length; i++) {
