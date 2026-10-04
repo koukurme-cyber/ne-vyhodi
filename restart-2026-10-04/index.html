@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>Не выходи — прототип</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Не выходи — двор</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -13,11 +13,21 @@
         <div class="kicker">БРОДСКИЙ</div>
         <h1>НЕ ВЫХОДИ</h1>
       </div>
-      <div class="objective">Цель: пройти к арке и не дать соседу заговорить.</div>
+      <div id="objective" class="objective">Пройдите к арке. Соседка хочет прочесть свой стих.</div>
     </header>
 
+    <nav class="level-nav" aria-label="Выбор уровня">
+      <span id="level-title">1 / 3 · Двор</span>
+      <div class="level-buttons">
+        <button type="button" data-level="0" aria-pressed="true">Двор</button>
+        <button type="button" data-level="1" aria-pressed="false">Проходной двор</button>
+        <button type="button" data-level="2" aria-pressed="false">Улица</button>
+      </div>
+    </nav>
     <section class="stage-wrap" aria-label="Игровая сцена">
-      <canvas id="game" width="960" height="540"></canvas>
+      <canvas id="game" width="960" height="540" aria-label="Двор. Идите к арке, избегайте соседок. Укройтесь в подъезде или нише."></canvas>
+      <span id="speech" class="sr-only" role="status" aria-live="polite"></span>
+      <span id="status" class="sr-only" role="status" aria-live="polite"></span>
       <div id="prompt" class="prompt" hidden></div>
       <div id="screen" class="screen" hidden>
         <div class="screen-card">
@@ -33,7 +43,8 @@
         <button id="left" class="control" aria-label="Идти влево">←</button>
         <button id="right" class="control" aria-label="Идти вправо">→</button>
       </div>
-      <button id="action" class="control action" aria-label="Взаимодействовать">E</button>
+      <button id="run" class="control run" aria-label="Удерживать, чтобы идти быстрее">Быстрее</button>
+      <button id="action" class="control action" aria-label="Спрятаться или выйти из укрытия" disabled>Спрятаться</button>
     </div>
 
     <footer class="help">
