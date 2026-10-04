@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Не выходи — прототип</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="kicker">БРОДСКИЙ</div>
+        <h1>НЕ ВЫХОДИ</h1>
+      </div>
+      <div class="objective">Цель: пройти к арке и не дать соседу заговорить.</div>
+    </header>
+
+    <section class="stage-wrap" aria-label="Игровая сцена">
+      <canvas id="game" width="960" height="540"></canvas>
+      <div id="prompt" class="prompt" hidden></div>
+      <div id="screen" class="screen" hidden>
+        <div class="screen-card">
+          <div id="screen-title" class="screen-title"></div>
+          <div id="screen-text" class="screen-text"></div>
+          <button id="restart" type="button">Ещё раз</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="mobile-controls" aria-label="Сенсорное управление">
+      <div class="move-controls">
+        <button id="left" class="control" aria-label="Идти влево">←</button>
+        <button id="right" class="control" aria-label="Идти вправо">→</button>
+      </div>
+      <button id="action" class="control action" aria-label="Взаимодействовать">E</button>
+    </div>
+
+    <footer class="help">
+      <span>← → / A D — идти</span>
+      <span>Shift — быстрее</span>
+      <span>E — спрятаться / выйти</span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
