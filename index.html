@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Не выходи</title>
+  <link rel="stylesheet" href="./styles.css?v=20261010-post-15" />
+<style>
+    .dialogue { position:absolute; inset:0; display:grid; align-items:end; justify-items:center; background:#080a0b55; padding:20px; z-index:3; }
+    .dialogue[hidden] { display:none; }
+    .dialogue-card { width:min(600px,100%); max-height:80%; overflow:auto; background:#e5dbc5; color:#282926; border:1px solid #736955; padding:18px 24px; box-shadow:0 10px 35px #0007; }
+    .dialogue-card h2 { margin:0 0 12px; font-size:19px; }
+    #dialogue-lines p { margin:10px 0; }
+    #dialogue-lines strong { display:block; font:700 13px Arial,sans-serif; margin-bottom:5px; color:#65533e; }
+    #dialogue-lines span { font-size:20px; line-height:1.35; }
+    #dialogue-next { margin-top:10px; padding:9px 18px; background:#2c302c; color:#eee3cf; border:1px solid #4e4e43; cursor:pointer; }
+    .dialogue.comic-dialogue { background:transparent; pointer-events:none; padding:0; }
+    .comic-dialogue .dialogue-card { position:absolute; right:18px; bottom:18px; width:auto; max-height:none; padding:0; border:0; background:none; box-shadow:none; pointer-events:auto; }
+    .comic-dialogue #dialogue-title, .comic-dialogue #dialogue-lines { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    #god-mode, #autoplay { padding:7px 10px; background:#252b29; color:#e0d5bc; border:1px solid #55574d; cursor:pointer; }
+    #god-mode[aria-pressed="true"] { border-color:#c3ae7c; }
+    #walkthrough-status { font-size:12px; }
+    @media(max-width:600px) { .dialogue { padding:10px; } .dialogue-card { padding:14px; } #dialogue-lines span { font-size:18px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="kicker">БРОДСКИЙ</div>
+        <h1>НЕ ВЫХОДИ</h1>
+      </div>
+      <div id="objective" class="objective">Пройдите к арке. Соседка хочет прочесть свой стих.</div>
+    </header>
+
+    <nav class="level-nav" aria-label="Выбор уровня">
+      <button type="button" id="god-mode" aria-pressed="false">God: ВЫКЛ</button>
+      <button type="button" id="autoplay">Автопроход</button>
+      <button type="button" id="manual-test" aria-pressed="false">Ручной тест: ВЫКЛ</button>
+      <button type="button" id="test-pause" hidden>Продолжить сцену</button>
+      <button type="button" id="test-step" hidden>Шаг 0,5 с</button>
+      <button type="button" id="test-step-long" hidden>Шаг 2 с</button>
+      <span id="walkthrough-status" role="status"></span>
+      <span id="level-title">1 / 13</span>
+      <div class="level-buttons">
+        <button type="button" data-level="0" aria-pressed="true">1</button>
+        <button type="button" data-level="1" aria-pressed="false">2</button>
+        <button type="button" data-level="2" aria-pressed="false">3</button>
+      </div>
+      <label class="chapter-picker">Продолжение <select id="chapter-select" aria-label="Выбрать сцену"></select></label>
+    </nav>
+    <div class="humanity-row"><span id="humanity-label">ЧЕЛОВЕКОЛЮБИЕ</span><div id="humanity" role="progressbar" aria-labelledby="humanity-label" aria-valuemin="0" aria-valuemax="3" aria-valuenow="3"><div id="humanity-fill"></div></div></div>
+    <section class="stage-wrap" aria-label="Игровая сцена">
+      <canvas id="game" width="960" height="540" aria-label="Идите к арке, избегайте соседок. Укройтесь в подъезде или нише."></canvas>
+      <span id="speech" class="sr-only" role="status" aria-live="polite"></span>
+      <span id="status" class="sr-only" role="status" aria-live="polite"></span>
+      <section id="dialogue" class="dialogue" role="dialog" aria-modal="true" aria-labelledby="dialogue-title" hidden>
+        <div class="dialogue-card">
+          <h2 id="dialogue-title"></h2>
+          <div id="dialogue-lines"></div>
+          <button id="dialogue-next" type="button">Продолжить</button>
+        </div>
+      </section>
+      <div id="prompt" class="prompt" hidden></div>
+      <div id="screen" class="screen" hidden>
+        <div class="screen-card">
+          <div id="screen-title" class="screen-title"></div>
+          <div id="screen-text" class="screen-text"></div>
+          <button id="restart" type="button">Ещё раз</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="mobile-controls" aria-label="Сенсорное управление">
+      <div class="move-controls">
+        <button id="left" class="control" aria-label="Идти влево">←</button>
+        <button id="right" class="control" aria-label="Идти вправо">→</button>
+      </div>
+      <button id="run" class="control run" aria-label="Удерживать, чтобы идти быстрее">Быстрее</button>
+      <button id="jump" class="control" hidden>Прыжок</button>
+      <button id="crouch" class="control" hidden>Пригнуться</button>
+      <button id="fire" class="control fire" hidden>Огонь</button>
+      <button id="reload" class="control reload" hidden>Зарядить</button>
+      <button id="action" class="control action" aria-label="Спрятаться или выйти из укрытия" disabled>Спрятаться</button>
+    </div>
+
+    <footer class="help">
+      <span>← → / A D — идти</span>
+      <span>Shift — быстрее</span>
+      <span>E — действие / укрытие</span>
+      <span>Enter — дальше / повторить</span>
+      <span>↑ / пробел — прыжок · ↓ — пригнуться · в перестрелке: пробел — огонь</span>
+    </footer>
+  </main>
+
+  <script src="./game.js?v=20261010-post-15"></script>
+  
+</body>
+</html>
+
+

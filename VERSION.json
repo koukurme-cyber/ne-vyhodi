@@ -1,0 +1,256 @@
+{
+  "version": 78,
+  "commit_sha": "8aeef68c9bc145bf3da3f97238ff5651752a995d",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 6127,
+      "sha256": "b477c03c230afde58c21187e7371b550aab9291156a63bbe047550a93ff6b838"
+    },
+    {
+      "path": "game.js",
+      "bytes": 139697,
+      "sha256": "3aae05a56b00721118ad1b4c3a95d40ee62535c44018245431ff93c69d637ad7"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 6761,
+      "sha256": "b45a22ca4238aa99752440c35eae3401edbe52bba84d758631d879e5be33ce2c"
+    },
+    {
+      "path": "assets/approved-characters.webp",
+      "bytes": 215646,
+      "sha256": "5f7a87ab937ddaf8e08ccc2648443045574c2fb68e9473ef64dd0fed02847f07"
+    },
+    {
+      "path": "assets/approved-courtyard.webp",
+      "bytes": 584112,
+      "sha256": "584a5cdf185babad5b6d784ddf5d9824565b919a4004add566a30cb0b3b14b95"
+    },
+    {
+      "path": "assets/approved-passage.webp",
+      "bytes": 609540,
+      "sha256": "a6502fa1aec6692c633608b78d9a34c2954f7bc2afd91194097c00a2364d7a59"
+    },
+    {
+      "path": "assets/brodsky-carry-v1.png",
+      "bytes": 2164882,
+      "sha256": "3176be06e4776b271948df3d792b8d423ff7a232a3692c29ed8d4eb39efb354a"
+    },
+    {
+      "path": "assets/brodsky-caviar.webp",
+      "bytes": 12114,
+      "sha256": "0b2529b601168024602175bca6c99defc8985b63fab2c0d5ed9df07ccf47a9c1"
+    },
+    {
+      "path": "assets/brodsky-crouch-gun-v1.png",
+      "bytes": 1779877,
+      "sha256": "5328618dd539e9b45d34407ccd90318c21c96782cfea366c93681b4644604f79"
+    },
+    {
+      "path": "assets/brodsky-crouch-v1.png",
+      "bytes": 1116190,
+      "sha256": "c29c3b635350b4ab5c323c62b380aedd216c205eef5c94d83d694eef0d01cc36"
+    },
+    {
+      "path": "assets/brodsky-phone-v1.png",
+      "bytes": 1278775,
+      "sha256": "3218e143434b096ac30e5c352fe784129f42b63cb911d683d513d401fadf6a66"
+    },
+    {
+      "path": "assets/cage-v3.webp",
+      "bytes": 200528,
+      "sha256": "be3f53e393beede71cc89738da3d8db628641cbc4e5c2e432baf9d692d71d8b9"
+    },
+    {
+      "path": "assets/cast-v3.webp",
+      "bytes": 368192,
+      "sha256": "85e026485cd3cd86b5b98995796f3975b290dba536d608b9ed730c499da42695"
+    },
+    {
+      "path": "assets/dance-gates-v1.png",
+      "bytes": 1070304,
+      "sha256": "1d643c434531e0b0c435445ed53ff9fdee035d5bdced7e382d7cf952fe35d9ef"
+    },
+    {
+      "path": "assets/door-niche-v1.png",
+      "bytes": 2570940,
+      "sha256": "d834572b7363a4c1bb4c29f2f28d98bf3ac0d203b14e26258c0b734114a09e63"
+    },
+    {
+      "path": "assets/electrobus-real-v5.webp",
+      "bytes": 172024,
+      "sha256": "718f108b3bb1c6db0ed361a066688571e458bbbf1a21b1ab12c13eb3d81f2644"
+    },
+    {
+      "path": "assets/embankment-walkway-v2.webp",
+      "bytes": 579942,
+      "sha256": "815246370fec04a201cbc95cc81ecf422d41ac04ffab7057f6673a18be6bc7ce"
+    },
+    {
+      "path": "assets/extra-gags-v1.webp",
+      "bytes": 361658,
+      "sha256": "b20468becb1933b2a6a92772462ff2f2bfd9ebe808080389e138cd34b2db072f"
+    },
+    {
+      "path": "assets/fish-stall.webp",
+      "bytes": 90292,
+      "sha256": "83c9d086d6a536d94d3ea0845e617d7e008d4ffa4ee36f9846de2f934404bdc8"
+    },
+    {
+      "path": "assets/free-chair-v1.png",
+      "bytes": 617442,
+      "sha256": "031b251707f87c2863437b2311ba21f1a5aa103bb12f854ca1c905ced05ad925"
+    },
+    {
+      "path": "assets/garden-switch-v1.png",
+      "bytes": 1057561,
+      "sha256": "04d35788d81bd48647241039705ad0e6bb3c3937bf152d1e9494a47c654bd6c6"
+    },
+    {
+      "path": "assets/garden-winter-v1.png",
+      "bytes": 2545355,
+      "sha256": "1093ac992b9db88878673cf673cb5a42a8293ce428402f6070a9992bcd193f97"
+    },
+    {
+      "path": "assets/home-entry-closed-v1.webp",
+      "bytes": 440486,
+      "sha256": "bf5c696d1536c5a408a7bfa33f9df6a9cc1e7546f2fda0d26c942dad19c197a8"
+    },
+    {
+      "path": "assets/home-entry-v1.webp",
+      "bytes": 467630,
+      "sha256": "d021629d259e18e2e3e97461336859f2f369836c108f3d0d9d2f6499c269bc5f"
+    },
+    {
+      "path": "assets/home-street-v2.webp",
+      "bytes": 682780,
+      "sha256": "aa1fe2aa19ee064d7c22db48a649b4fa084652cc07d8254c22c2e9ab0035d3b8"
+    },
+    {
+      "path": "assets/letter-v1.png",
+      "bytes": 2941607,
+      "sha256": "84a2af49e66884444b98297d0b1b096bfd1d359830294afc26c23fa006e96cf8"
+    },
+    {
+      "path": "assets/lore-gags-v1.webp",
+      "bytes": 615914,
+      "sha256": "4fccada3172c95013e699f31a8a6e2a053a9273c33348db3f4b6d32df5da7e1d"
+    },
+    {
+      "path": "assets/market-v3.webp",
+      "bytes": 344810,
+      "sha256": "c4569f02676710518775ba03b89b1882ac563eb3462afac37d3ab36171f48044"
+    },
+    {
+      "path": "assets/modern-tram-v6.webp",
+      "bytes": 152630,
+      "sha256": "a81549f54b8d1b70e53e0beba8e346fa7b389cdd46438a02fe80c9b5824b1d1c"
+    },
+    {
+      "path": "assets/new-npcs.webp",
+      "bytes": 258268,
+      "sha256": "7579f27b9444a88af242a71f9ee64577c016e8864e00d49dbe45363c97fe9d13"
+    },
+    {
+      "path": "assets/night-v3.webp",
+      "bytes": 312326,
+      "sha256": "34a810eed4fc9b386cfd55e7ea42b376416b22ef31e147de110ba902c6b3305d"
+    },
+    {
+      "path": "assets/npc-actions-v1.webp",
+      "bytes": 494242,
+      "sha256": "be601b289b5aa79d3cf609fdc173add93b6c1e914e8046c122b27a63b2b8f179"
+    },
+    {
+      "path": "assets/pawnshop-v3.webp",
+      "bytes": 261214,
+      "sha256": "0f5a3037fefdfe26c0fd67994fa087fb552b07d27b562b249dd75d015232cd54"
+    },
+    {
+      "path": "assets/pilgrim-walk-v4.webp",
+      "bytes": 326136,
+      "sha256": "bc8e1ffe4090fa294cb91609d7428206836d4a48b86b2fffe0c2f5ea6d3a0690"
+    },
+    {
+      "path": "assets/post-crisis-pit-v1.webp",
+      "bytes": 331614,
+      "sha256": "0a60d33527ebc00628e7593f828b9b8e06c0d7271c70af505bb47c92e80cfe8d"
+    },
+    {
+      "path": "assets/post-flatbed-blue-v2.webp",
+      "bytes": 207920,
+      "sha256": "785eb124b75bd04bc04ec3df680a5e1157e0f90e598abe422401ed07511328ea"
+    },
+    {
+      "path": "assets/post-hall-clear-v1.webp",
+      "bytes": 400396,
+      "sha256": "dea17dd813c13c777c2feb83a2d2830d5b669ae114ec27b862a2a1f705c6864c"
+    },
+    {
+      "path": "assets/post-parking-v1.webp",
+      "bytes": 278250,
+      "sha256": "8ad4b5d1e803d3105a1125fb0754768d88af603df214e5aceef485fa194e50dc"
+    },
+    {
+      "path": "assets/postal-props-v1.png",
+      "bytes": 2020564,
+      "sha256": "82da9d2890871a08ff4c4708ff4964aa1d1ee42fca65f55e17770cdb33c52889"
+    },
+    {
+      "path": "assets/postal-queue-v1.png",
+      "bytes": 1513791,
+      "sha256": "a175c9088e15841279797b0efdc8990511642845b1aabe10aa88c122db8de045"
+    },
+    {
+      "path": "assets/pyaterochka-v6.webp",
+      "bytes": 153494,
+      "sha256": "e879b1186e5d27bae1cd9498cbd17ed0eada11e0b305f32b1eda19955bd51064"
+    },
+    {
+      "path": "assets/queue-dance-v1.webp",
+      "bytes": 283490,
+      "sha256": "76a66aaf018cfb19ea8323e14d0b46f46e4c2caf213e10000d6aeb05bef98cf4"
+    },
+    {
+      "path": "assets/room-v3.webp",
+      "bytes": 185524,
+      "sha256": "240b96228b143a609f7b7cdb76c5896aaa0b9f41f9da9c4bbaffbfcf69607556"
+    },
+    {
+      "path": "assets/route-props-v1.png",
+      "bytes": 1597857,
+      "sha256": "34df7be3ba0df957cf1c1ee2781a7bbbca32d55475764a52fd18d81a6431f8d1"
+    },
+    {
+      "path": "assets/rurik-v6.webp",
+      "bytes": 344856,
+      "sha256": "20af2e275124a8cc0d9ac1820d3687ac87b43110280f198272834d1e83e54bef"
+    },
+    {
+      "path": "assets/street-cover-v1.png",
+      "bytes": 2304955,
+      "sha256": "6ca4063f2ca6a34759d82fc2155baeabf794cade17a0196744c7e7860d3c35a0"
+    },
+    {
+      "path": "assets/street-mansion-transition-v2.webp",
+      "bytes": 583304,
+      "sha256": "4bd34050bed2fcd843d409a7152576640f0249412614f52ed8994b846e2716a5"
+    },
+    {
+      "path": "assets/street-store-pit-v4.webp",
+      "bytes": 532718,
+      "sha256": "653935a4c8a2066edcae23c454a4e2ae6745943f94abec5b069f5f0a375a899d"
+    },
+    {
+      "path": "assets/street.webp",
+      "bytes": 596818,
+      "sha256": "e1738fe3cbc37714a35e654cb32c698bd43a75b7910df3d2c771294c6f033f01"
+    },
+    {
+      "path": "assets/tram-v5.webp",
+      "bytes": 167820,
+      "sha256": "e69b3e0b59cfbcc47c218ebe22229d58a8ce7320d1ead4f811fe3301f5bfd81b"
+    }
+  ]
+}
